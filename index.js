@@ -1,6 +1,11 @@
-// index.js
-
-import ContactForm from "./Contact.js"
+function showHide() {
+    const x = document.getElementById("menu");
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "flex";
+    }
+}
    
 // var number = 5;
 // let name = "Micah";

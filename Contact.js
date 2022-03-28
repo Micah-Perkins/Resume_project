@@ -1,29 +1,7 @@
-// Contact.js
-
-export default class Contact {
-
-    constructor(form) {
-        this.fullName = form.elements["fullName"].value;
-        this.email = form.elements["email"].value;
-        this.subject = form.elements["subject"].value;
-        this.body = form.elements["msg"].value;
+function sendMessage() {
+    if (document.getElementById("fullName").value === "" || document.getElementById("email").value === "")  {
+        document.getElementById("formInfo").innerHTML = "Please include your full name and email.";
+    } else {
+        document.getElementById("formInfo").innerHTML = "Thank you for your interest! (Message feature not yet active)";
     }
-
-    fullName = "";
-    email = "";
-    subject = "";
-    body = "";
-
-    send() {
-        console.info(this.formatMessage());
-        document.getElementById("formInfo").innerHTML = showMessage("We're not sending emails yet... Feature for version 2.");
-    }
-
-    formatMessage() {
-        return `To: ${this.fullName}
-                Email: ${this.email}
-                Subject: ${this.subject}
-                Body: ${this.body}`;
-                
-    }
-};
+}

@@ -2,6 +2,28 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  grid-area: header;
+}
+
+.toggle-menu {
+  /* Style for menu button */
+}
+
+#menu-desktop {
+  display: none;
+}
+
+#menu {
+  grid-area: menu;
+  display: none;
+  flex-direction: column;
+  /* mobile menu style go heeeerrrr */
+}
+
 main {
   background-color: rgb(158, 177, 231);
   padding: 4px;
@@ -51,44 +73,21 @@ footer {
   grid-area: footer;
 }
 
-#menu li {
-  display: inline;
-  padding: 8px;
-  background-color: rgb(70, 70, 70);
-}
-
-#menu li a {
-  color: white !important;
-  text-decoration: none;
-}
-
-#menu li.active {
-  background-color: darkslateblue;
-}
-
-#menu {
-  float: right;
-}
-
-header {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  grid-area: header;
-}
-
-header #menu {
-  margin-left: auto;
-}
-
 .container {
   display: grid;
   grid-template-areas:
-    "header header"
-    "main aside"
-    "footer footer";
-  grid-template-columns: auto 200px;
+    "header"
+    "menu"
+    "main"
+    "aside"
+    "footer";
+  grid-template-columns: auto;
   grid-gap: 8px;
+}
+
+.exp-containter {
+  display: flex;
+  flex-direction: column;
 }
 
 #formInfo {
@@ -100,3 +99,63 @@ header #headshot, header #siteName, header #menu{
     display: inline;
     vertical-align: middle;
 } */
+
+
+@media (min-width: 600px) {
+
+  #menu,
+  .toggle-menu {
+    display: none;
+  }
+
+  #menu-desktop {
+    display: flex;
+  }
+
+  #menu-desktop li {
+    display: inline;
+    padding: 8px;
+    background-color: rgb(70, 70, 70);
+  }
+  
+  #menu-desktop li a {
+    color: white !important;
+    text-decoration: none;
+  }
+  
+  #menu-desktop li.active {
+    background-color: darkslateblue;
+  }
+  
+  #menu-desktop {
+    float: right;
+  }
+  
+  header #menu-desktop {
+    margin-left: auto;
+  }
+
+  .exp-containter {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .experience {
+    width: 33%;
+  }
+
+} /* for better display on iPads/Tablets  */
+
+@media (min-width: 1025px) {
+
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: auto 200px;
+    grid-gap: 8px;
+  }
+
+}
