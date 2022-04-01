@@ -10,7 +10,9 @@ header {
 }
 
 .toggle-menu {
-  /* Style for menu button */
+  background-color: rgb(225, 158, 231);
+  padding: 4px;
+  color: #202020;
 }
 
 #menu-desktop {
@@ -21,7 +23,12 @@ header {
   grid-area: menu;
   display: none;
   flex-direction: column;
-  /* mobile menu style go heeeerrrr */
+  background-color: rgb(225, 158, 231);
+  padding: 4px;
+  font-size:1.25em;
+  font-weight:bold;
+  color:white;
+  text-decoration:none;
 }
 
 main {
